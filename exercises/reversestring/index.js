@@ -20,8 +20,22 @@ function reverse(s) {
   return str.join("");
 }
 
-let altOne = s => {
-  return s.split("").reverse().join("");
-};
-
 module.exports = reverse;
+
+// function reverse(str) {
+//   return str.split("").reduce((reversed, char) => {
+//     return char + reversed;
+//   }, "");
+// }
+
+// function reverse(str) {
+//   let reversed = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reversed += str[i];
+//   }
+//   return reversed;
+// }
+
+// let altOne = s => {
+//   return s.split("").reverse().join("");
+// };
