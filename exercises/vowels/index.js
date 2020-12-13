@@ -7,6 +7,29 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+// Recursive
+function vowels(str, index = 0, count = 0) {
+  let vowelArr = ["a", "e", "i", "o", "u"];
+  str = str.toLowerCase();
+  if (index === str.length) {
+    return count;
+  }
+  if (vowelArr.includes(str[index])) {
+    return vowels(str, index + 1, count + 1);
+  }
+  return vowels(str, index + 1, count);
+}
+
+function iterativeVowels(str) {
+  let vowelArr = ["a", "e", "i", "o", "u"];
+  let count = 0;
+  str = str.toLowerCase();
+  for (let i = 0; i < str.length; i++) {
+    if (vowelArr.includes(str[i])) {
+      count++;
+    }
+  }
+  return count;
+}
 
 module.exports = vowels;
